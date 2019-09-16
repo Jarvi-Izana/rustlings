@@ -8,6 +8,8 @@
 mod tests {
     #[test]
     fn you_can_assert_eq() {
-        assert_eq!();
+        let gui = "10";
+        assert_eq!(gui, "10");
+        assert_eq!("10", gui);
     }
 }

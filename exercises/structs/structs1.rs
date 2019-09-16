@@ -42,7 +42,9 @@ mod tests {
     #[test]
     fn unit_structs() {
         // Instantiate a unit struct!
-        let unit_struct = UnitStruct;
+        // without curly brace is also okay!
+        // let unit_struct = UnitStruct;
+        let unit_struct = UnitStruct{};
 
         // debug print by trait Debug
         let message = format!("{:?}s are fun!", unit_struct);
