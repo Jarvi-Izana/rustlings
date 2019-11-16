@@ -13,6 +13,6 @@ mod tests {
     #[test]
     fn you_can_assert() {
         let gui = 10;
-        assert!(gui, 10);
+        assert!(gui == 10);
     }
 }
