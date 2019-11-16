@@ -17,14 +17,27 @@ fn string(arg: String) {
 }
 
 fn main() {
-    ("blue");
-    ("red".to_string());
-    (String::from("hi"));
-    ("rust is fun!".to_owned());
-    ("nice weather".into());
-    (format!("Interpolation {}", "Station"));
-    (&String::from("abc")[0..1]);
-    ("  hello there ".trim());
-    ("Happy Monday!".to_string().replace("Mon", "Tues"));
-    ("mY sHiFt KeY iS sTiCkY".to_lowercase());
+    string_slice("blue");
+    string_slice(&String::from("abc")[0..1]);
+
+    string("red".to_string());
+    string(String::from("hi"));
+
+    // to owned is preferred since
+    // it has better documentation purpose
+    string("rust is fun!".to_owned());
+
+    // oh, really?? it has type deduction???
+    string_slice("nice weather".into());
+    string("nice weather".into());
+
+    // no write just reference
+    string_slice("  hello there ".trim());
+
+    // if you need to write change to string
+    // it should return an owned String type
+    string(format!("Interpolation {}", "Station"));
+    string("Happy Monday!".to_string().replace("Mon", "Tues"));
+    string("mY sHiFt KeY iS sTiCkY".to_lowercase());
 }
+
